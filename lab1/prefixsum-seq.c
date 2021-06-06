@@ -15,7 +15,9 @@ int main() {
         for (int i = 1; i <= n; i++) {
             sum += encrypt(i, key);
             prefix_sum[i] = sum;
+            /*printf("%d ", prefix_sum[i]);*/
         }
+        /*printf("\n");*/
         output(prefix_sum, n);
     }
     return 0;
