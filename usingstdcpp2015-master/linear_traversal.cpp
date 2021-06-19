@@ -8,7 +8,7 @@
  
 #include <algorithm>
 #include <array>
-#include <chrono
+#include <chrono>
 #include <numeric> 
     
 std::chrono::high_resolution_clock::time_point measure_start,measure_pause;

@@ -1,0 +1,527 @@
+--------------------------------------------------------------------------------
+I1 cache:         32768 B, 64 B, 8-way associative
+D1 cache:         32768 B, 64 B, 8-way associative
+LL cache:         8388608 B, 64 B, 16-way associative
+Command:          ./linear_traversal_vector
+Data file:        ./linear_traversal_vector_cachegrind
+Events recorded:  Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Events shown:     Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Event sort order: Ir I1mr ILmr Dr D1mr DLmr Dw D1mw DLmw
+Thresholds:       0.1 100 100 100 100 100 100 100 100
+Include dirs:     
+User annotated:   
+Auto-annotation:  on
+
+--------------------------------------------------------------------------------
+Ir                      I1mr           ILmr           Dr                      D1mr                DLmr                Dw                      D1mw               DLmw               
+--------------------------------------------------------------------------------
+51,299,500,030 (100.0%) 3,427 (100.0%) 2,493 (100.0%) 20,161,413,416 (100.0%) 45,526,003 (100.0%) 38,432,478 (100.0%) 14,410,914,576 (100.0%) 8,219,137 (100.0%) 7,693,054 (100.0%)  PROGRAM TOTALS
+
+--------------------------------------------------------------------------------
+Ir                      I1mr         ILmr         Dr                     D1mr                DLmr                Dw                     D1mw               DLmw                file:function
+--------------------------------------------------------------------------------
+15,072,262,981 (29.38%)   1 ( 0.03%)   1 ( 0.04%) 5,552,938,993 (27.54%)          0                   0          4,759,661,994 (33.03%)         0                  0           /usr/include/c++/11.1.0/bits/stl_iterator.h:bool __gnu_cxx::operator!=<int*, std::vector<int, std::allocator<int> > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > const&, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > const&)
+10,914,350,728 (21.28%)  11 ( 0.32%)   6 ( 0.24%) 1,455,248,952 ( 7.22%) 45,476,779 (99.89%) 38,421,928 (99.97%) 2,182,874,920 (15.15%)         0                  0           /usr/include/c++/11.1.0/bits/stl_numeric.h:int std::accumulate<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int)
+ 9,519,323,988 (18.56%)   1 ( 0.03%)   1 ( 0.04%) 4,759,661,994 (23.61%)          0                   0          3,173,107,996 (22.02%)         0                  0           /usr/include/c++/11.1.0/bits/stl_iterator.h:__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::base() const
+ 8,726,014,000 (17.01%)   0            0          4,759,644,000 (23.61%)          0                   0          2,379,822,000 (16.51%)         0                  0           /usr/include/c++/11.1.0/bits/stl_iterator.h:__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator++()
+ 5,552,918,000 (10.82%)   1 ( 0.03%)   1 ( 0.04%) 3,173,096,000 (15.74%)          0                   0          1,586,548,000 (11.01%)         0                  0           /usr/include/c++/11.1.0/bits/stl_iterator.h:__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::operator*() const
+ 1,050,464,300 ( 2.05%)   1 ( 0.03%)   1 ( 0.04%)   131,308,045 ( 0.65%)         15 ( 0.00%)          5 ( 0.00%)   262,616,090 ( 1.82%) 4,103,386 (49.92%) 3,842,132 (49.94%)  /usr/include/c++/11.1.0/bits/stl_numeric.h:void std::iota<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int)
+   459,578,135 ( 0.90%)  16 ( 0.47%)   6 ( 0.24%)   328,270,015 ( 1.63%)         15 ( 0.00%)          5 ( 0.00%)    65,654,060 ( 0.46%) 4,103,371 (49.92%) 3,848,765 (50.03%)  /usr/include/c++/11.1.0/bits/stl_algobase.h:__gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/11.1.0/bits/stl_numeric.h
+--------------------------------------------------------------------------------
+Ir                     I1mr        ILmr       Dr                     D1mr                DLmr                Dw                     D1mw               DLmw               
+
+-- line 80 ----------------------------------------
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @param  __last  End of range.
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @param  __value  Starting value.
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @return  Nothing.
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @ingroup numeric_ops
+            .           .          .                      .                   .                   .                      .                  .                  .              */
+            .           .          .                      .                   .                   .                      .                  .                  .             template<typename _ForwardIterator, typename _Tp>
+            .           .          .                      .                   .                   .                      .                  .                  .               _GLIBCXX20_CONSTEXPR
+            .           .          .                      .                   .                   .                      .                  .                  .               void
+          105 ( 0.00%)  0          0                      0                   0                   0                     75 ( 0.00%)         0                  0               iota(_ForwardIterator __first, _ForwardIterator __last, _Tp __value)
+            .           .          .                      .                   .                   .                      .                  .                  .               {
+            .           .          .                      .                   .                   .                      .                  .                  .                 // concept requirements
+            .           .          .                      .                   .                   .                      .                  .                  .                 __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
+            .           .          .                      .                   .                   .                      .                  .                  .           				  _ForwardIterator>)
+            .           .          .                      .                   .                   .                      .                  .                  .                 __glibcxx_function_requires(_ConvertibleConcept<_Tp,
+            .           .          .                      .                   .                   .                      .                  .                  .           	    typename iterator_traits<_ForwardIterator>::value_type>)
+            .           .          .                      .                   .                   .                      .                  .                  .                 __glibcxx_requires_valid_range(__first, __last);
+            .           .          .                      .                   .                   .                      .                  .                  .           
+  656,540,120 ( 1.28%)  1 ( 0.03%) 1 ( 0.04%)             0                   0                   0            131,308,015 ( 0.91%)         0                  0                 for (; __first != __last; ++__first)
+            .           .          .                      .                   .                   .                      .                  .                  .           	{
+  328,270,000 ( 0.64%)  0          0             65,654,000 ( 0.33%)          0                   0            131,308,000 ( 0.91%) 4,103,386 (49.92%) 3,842,132 (49.94%)  	  *__first = __value;
+   65,654,000 ( 0.13%)  0          0             65,654,000 ( 0.33%)          0                   0                      0                  0                  0           	  ++__value;
+            .           .          .                      .                   .                   .                      .                  .                  .           	}
+           75 ( 0.00%)  0          0                     45 ( 0.00%)         15 ( 0.00%)          5 ( 0.00%)             0                  0                  0               }
+            .           .          .                      .                   .                   .                      .                  .                  .           #endif
+            .           .          .                      .                   .                   .                      .                  .                  .           
+            .           .          .                      .                   .                   .                      .                  .                  .           _GLIBCXX_END_NAMESPACE_VERSION
+            .           .          .                      .                   .                   .                      .                  .                  .           
+            .           .          .                      .                   .                   .                      .                  .                  .           _GLIBCXX_BEGIN_NAMESPACE_ALGO
+            .           .          .                      .                   .                   .                      .                  .                  .           
+            .           .          .                      .                   .                   .                      .                  .                  .           #if __cplusplus > 201703L
+            .           .          .                      .                   .                   .                      .                  .                  .           // _GLIBCXX_RESOLVE_LIB_DEFECTS
+-- line 110 ----------------------------------------
+-- line 126 ----------------------------------------
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @param  __first  Start of range.
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @param  __last  End of range.
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @param  __init  Starting value to add other values to.
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @return  The final sum.
+            .           .          .                      .                   .                   .                      .                  .                  .              */
+            .           .          .                      .                   .                   .                      .                  .                  .             template<typename _InputIterator, typename _Tp>
+            .           .          .                      .                   .                   .                      .                  .                  .               _GLIBCXX20_CONSTEXPR
+            .           .          .                      .                   .                   .                      .                  .                  .               inline _Tp
+       17,979 ( 0.00%) 11 ( 0.32%) 6 ( 0.24%)             0                   0                   0                 11,996 ( 0.00%)         0                  0               accumulate(_InputIterator __first, _InputIterator __last, _Tp __init)
+            .           .          .                      .                   .                   .                      .                  .                  .               {
+            .           .          .                      .                   .                   .                      .                  .                  .                 // concept requirements
+            .           .          .                      .                   .                   .                      .                  .                  .                 __glibcxx_function_requires(_InputIteratorConcept<_InputIterator>)
+            .           .          .                      .                   .                   .                      .                  .                  .                 __glibcxx_requires_valid_range(__first, __last);
+            .           .          .                      .                   .                   .                      .                  .                  .           
+7,276,224,292 (14.18%)  0          0                    300 ( 0.00%)          0                   0          1,455,242,984 (10.10%)         0                  0                 for (; __first != __last; ++__first)
+3,638,100,450 ( 7.09%)  0          0          1,455,240,270 ( 7.22%) 45,476,779 (99.89%) 38,421,928 (99.97%)   727,620,090 ( 5.05%)         0                  0           	__init = _GLIBCXX_MOVE_IF_20(__init) + *__first;
+        3,014 ( 0.00%)  0          0                  2,999 ( 0.00%)          0                   0                      0                  0                  0                 return __init;
+        6,013 ( 0.00%)  0          0                  5,998 ( 0.00%)          0                   0                      0                  0                  0               }
+            .           .          .                      .                   .                   .                      .                  .                  .           
+            .           .          .                      .                   .                   .                      .                  .                  .             /**
+            .           .          .                      .                   .                   .                      .                  .                  .              *  @brief  Accumulate values in a range with operation.
+            .           .          .                      .                   .                   .                      .                  .                  .              *
+            .           .          .                      .                   .                   .                      .                  .                  .              *  Accumulates the values in the range `[first,last)` using the function
+            .           .          .                      .                   .                   .                      .                  .                  .              *  object `__binary_op`.  The initial value is `__init`.  The values are
+            .           .          .                      .                   .                   .                      .                  .                  .              *  processed in order.
+            .           .          .                      .                   .                   .                      .                  .                  .              *
+-- line 151 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/11.1.0/bits/stl_iterator.h
+--------------------------------------------------------------------------------
+Ir                      I1mr       ILmr       Dr                     D1mr           DLmr        Dw                     D1mw        DLmw       
+
+-- line 999 ----------------------------------------
+             .          .          .                      .              .           .                      .           .          .           #if __cplusplus > 201703L && __cpp_lib_concepts
+             .          .          .                      .              .           .                      .           .          .                 using iterator_concept = std::__detail::__iter_concept<_Iterator>;
+             .          .          .                      .              .           .                      .           .          .           #endif
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+             .          .          .                      .              .           .                      .           .          .                 : _M_current(_Iterator()) { }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 explicit _GLIBCXX20_CONSTEXPR
+        23,992 ( 0.00%) 1 ( 0.03%) 1 ( 0.04%)             0              0           0                 17,994 ( 0.00%) 14 ( 0.00%) 5 ( 0.00%)        __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+        41,986 ( 0.00%) 0          0                 29,990 ( 0.00%) 2,984 ( 0.01%) 50 ( 0.00%)         5,998 ( 0.00%)  0          0                 : _M_current(__i) { }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 // Allow iterator to const_iterator conversion
+             .          .          .                      .              .           .                      .           .          .                 template<typename _Iter>
+             .          .          .                      .              .           .                      .           .          .                   _GLIBCXX20_CONSTEXPR
+             .          .          .                      .              .           .                      .           .          .                   __normal_iterator(const __normal_iterator<_Iter,
+             .          .          .                      .              .           .                      .           .          .           			  typename __enable_if<
+             .          .          .                      .              .           .                      .           .          .                 	       (std::__are_same<_Iter, typename _Container::pointer>::__value),
+             .          .          .                      .              .           .                      .           .          .           		      _Container>::__type>& __i) _GLIBCXX_NOEXCEPT
+             .          .          .                      .              .           .                      .           .          .                   : _M_current(__i.base()) { }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 // Forward iterator requirements
+             .          .          .                      .              .           .                      .           .          .                 _GLIBCXX20_CONSTEXPR
+             .          .          .                      .              .           .                      .           .          .                 reference
+ 2,379,822,000 ( 4.64%) 0          0                      0              0           0          1,586,548,000 (11.01%)  0          0                 operator*() const _GLIBCXX_NOEXCEPT
+ 3,173,096,000 ( 6.19%) 1 ( 0.03%) 1 ( 0.04%) 3,173,096,000 (15.74%)     0           0                      0           0          0                 { return *_M_current; }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 _GLIBCXX20_CONSTEXPR
+             .          .          .                      .              .           .                      .           .          .                 pointer
+             .          .          .                      .              .           .                      .           .          .                 operator->() const _GLIBCXX_NOEXCEPT
+             .          .          .                      .              .           .                      .           .          .                 { return _M_current; }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 _GLIBCXX20_CONSTEXPR
+             .          .          .                      .              .           .                      .           .          .                 __normal_iterator&
+ 2,379,822,000 ( 4.64%) 0          0                      0              0           0          1,586,548,000 (11.01%)  0          0                 operator++() _GLIBCXX_NOEXCEPT
+             .          .          .                      .              .           .                      .           .          .                 {
+ 3,966,370,000 ( 7.73%) 0          0          2,379,822,000 (11.80%)     0           0            793,274,000 ( 5.50%)  0          0           	++_M_current;
+   793,274,000 ( 1.55%) 0          0            793,274,000 ( 3.93%)     0           0                      0           0          0           	return *this;
+ 1,586,548,000 ( 3.09%) 0          0          1,586,548,000 ( 7.87%)     0           0                      0           0          0                 }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 _GLIBCXX20_CONSTEXPR
+             .          .          .                      .              .           .                      .           .          .                 __normal_iterator
+             .          .          .                      .              .           .                      .           .          .                 operator++(int) _GLIBCXX_NOEXCEPT
+             .          .          .                      .              .           .                      .           .          .                 { return __normal_iterator(_M_current++); }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 // Bidirectional iterator requirements
+             .          .          .                      .              .           .                      .           .          .                 _GLIBCXX20_CONSTEXPR
+-- line 1044 ----------------------------------------
+-- line 1077 ----------------------------------------
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 _GLIBCXX20_CONSTEXPR
+             .          .          .                      .              .           .                      .           .          .                 __normal_iterator
+             .          .          .                      .              .           .                      .           .          .                 operator-(difference_type __n) const _GLIBCXX_NOEXCEPT
+             .          .          .                      .              .           .                      .           .          .                 { return __normal_iterator(_M_current - __n); }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .                 _GLIBCXX20_CONSTEXPR
+             .          .          .                      .              .           .                      .           .          .                 const _Iterator&
+ 4,759,661,994 ( 9.28%) 1 ( 0.03%) 1 ( 0.04%)             0              0           0          3,173,107,996 (22.02%)  0          0                 base() const _GLIBCXX_NOEXCEPT
+ 4,759,661,994 ( 9.28%) 0          0          4,759,661,994 (23.61%)     0           0                      0           0          0                 { return _M_current; }
+             .          .          .                      .              .           .                      .           .          .               };
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .             // Note: In what follows, the left- and right-hand-side iterators are
+             .          .          .                      .              .           .                      .           .          .             // allowed to vary in types (conceptually in cv-qualification) so that
+             .          .          .                      .              .           .                      .           .          .             // comparison between cv-qualified and non-cv-qualified iterators be
+             .          .          .                      .              .           .                      .           .          .             // valid.  However, the greedy and unfriendly operators in std::rel_ops
+             .          .          .                      .              .           .                      .           .          .             // will make overload resolution ambiguous (when in scope) if we don't
+             .          .          .                      .              .           .                      .           .          .             // provide overloads whose operands are of the same type.  Can someone
+-- line 1094 ----------------------------------------
+-- line 1134 ----------------------------------------
+             .          .          .                      .              .           .                      .           .          .               operator!=(const __normal_iterator<_IteratorL, _Container>& __lhs,
+             .          .          .                      .              .           .                      .           .          .           	       const __normal_iterator<_IteratorR, _Container>& __rhs)
+             .          .          .                      .              .           .                      .           .          .               _GLIBCXX_NOEXCEPT
+             .          .          .                      .              .           .                      .           .          .               { return __lhs.base() != __rhs.base(); }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .             template<typename _Iterator, typename _Container>
+             .          .          .                      .              .           .                      .           .          .               _GLIBCXX20_CONSTEXPR
+             .          .          .                      .              .           .                      .           .          .               inline bool
+ 4,759,661,994 ( 9.28%) 0          0                      0              0           0          3,173,107,996 (22.02%)  0          0               operator!=(const __normal_iterator<_Iterator, _Container>& __lhs,
+             .          .          .                      .              .           .                      .           .          .           	       const __normal_iterator<_Iterator, _Container>& __rhs)
+             .          .          .                      .              .           .                      .           .          .               _GLIBCXX_NOEXCEPT
+10,312,600,987 (20.10%) 1 ( 0.03%) 1 ( 0.04%) 5,552,938,993 (27.54%)     0           0          1,586,553,998 (11.01%)  0          0               { return __lhs.base() != __rhs.base(); }
+             .          .          .                      .              .           .                      .           .          .           
+             .          .          .                      .              .           .                      .           .          .             // Random access iterator requirements
+             .          .          .                      .              .           .                      .           .          .             template<typename _IteratorL, typename _IteratorR, typename _Container>
+             .          .          .                      .              .           .                      .           .          .               inline bool
+             .          .          .                      .              .           .                      .           .          .               operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+             .          .          .                      .              .           .                      .           .          .           	      const __normal_iterator<_IteratorR, _Container>& __rhs)
+             .          .          .                      .              .           .                      .           .          .               _GLIBCXX_NOEXCEPT
+             .          .          .                      .              .           .                      .           .          .               { return __lhs.base() < __rhs.base(); }
+-- line 1153 ----------------------------------------
+
+--------------------------------------------------------------------------------
+-- Auto-annotated source: /usr/include/c++/11.1.0/bits/stl_algobase.h
+--------------------------------------------------------------------------------
+Ir                   I1mr        ILmr       Dr                   D1mr        DLmr       Dw                  D1mw               DLmw               
+
+-- line 222 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .              *
+          .           .          .                    .           .          .                   .                  .                  .              *  This is the simple classic generic implementation.  It will work on
+          .           .          .                    .           .          .                   .                  .                  .              *  temporary expressions, since they are only evaluated once, unlike a
+          .           .          .                    .           .          .                   .                  .                  .              *  preprocessor macro.
+          .           .          .                    .           .          .                   .                  .                  .             */
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX14_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline const _Tp&
+         60 ( 0.00%)  1 ( 0.03%) 1 ( 0.04%)           0           0          0                  45 ( 0.00%)         0                  0               min(const _Tp& __a, const _Tp& __b)
+          .           .          .                    .           .          .                   .                  .                  .               {
+          .           .          .                    .           .          .                   .                  .                  .                 // concept requirements
+          .           .          .                    .           .          .                   .                  .                  .                 __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+          .           .          .                    .           .          .                   .                  .                  .                 //return __b < __a ? __b : __a;
+         90 ( 0.00%)  0          0                   60 ( 0.00%)  0          0                   0                  0                  0                 if (__b < __a)
+          .           .          .                    .           .          .                   .                  .                  .           	return __b;
+         15 ( 0.00%)  0          0                   15 ( 0.00%)  0          0                   0                  0                  0                 return __a;
+         30 ( 0.00%)  0          0                   30 ( 0.00%)  0          0                   0                  0                  0               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             /**
+          .           .          .                    .           .          .                   .                  .                  .              *  @brief This does what you think it does.
+          .           .          .                    .           .          .                   .                  .                  .              *  @ingroup sorting_algorithms
+          .           .          .                    .           .          .                   .                  .                  .              *  @param  __a  A thing of arbitrary type.
+          .           .          .                    .           .          .                   .                  .                  .              *  @param  __b  Another thing of arbitrary type.
+          .           .          .                    .           .          .                   .                  .                  .              *  @return   The greater of the parameters.
+          .           .          .                    .           .          .                   .                  .                  .              *
+-- line 246 ----------------------------------------
+-- line 305 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .                 return __a;
+          .           .          .                    .           .          .                   .                  .                  .               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             // Fallback implementation of the function in bits/stl_iterator.h used to
+          .           .          .                    .           .          .                   .                  .                  .             // remove the __normal_iterator wrapper. See copy, fill, ...
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _Iterator>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline _Iterator
+        171 ( 0.00%)  2 ( 0.06%) 1 ( 0.04%)           0           0          0                 114 ( 0.00%)         0                  0               __niter_base(_Iterator __it)
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX_NOEXCEPT_IF(std::is_nothrow_copy_constructible<_Iterator>::value)
+        171 ( 0.00%)  0          0                  171 ( 0.00%)  0          0                   0                  0                  0               { return __it; }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _Ite, typename _Seq>
+          .           .          .                    .           .          .                   .                  .                  .               _Ite
+          .           .          .                    .           .          .                   .                  .                  .               __niter_base(const ::__gnu_debug::_Safe_iterator<_Ite, _Seq,
+          .           .          .                    .           .          .                   .                  .                  .           		 std::random_access_iterator_tag>&);
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             // Reverse the __niter_base transformation to get a
+          .           .          .                    .           .          .                   .                  .                  .             // __normal_iterator back again (this assumes that __normal_iterator
+-- line 323 ----------------------------------------
+-- line 327 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .               inline _From
+          .           .          .                    .           .          .                   .                  .                  .               __niter_wrap(_From __from, _To __res)
+          .           .          .                    .           .          .                   .                  .                  .               { return __from + (__res - std::__niter_base(__from)); }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             // No need to wrap, iterator already has the right type.
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _Iterator>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline _Iterator
+         76 ( 0.00%)  0          0                    0           0          0                  57 ( 0.00%)         0                  0               __niter_wrap(const _Iterator&, _Iterator __res)
+         57 ( 0.00%)  0          0                   57 ( 0.00%)  0          0                   0                  0                  0               { return __res; }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             // All of these auxiliary structs serve two purposes.  (1) Replace
+          .           .          .                    .           .          .                   .                  .                  .             // calls to copy with memmove whenever possible.  (Memmove, not memcpy,
+          .           .          .                    .           .          .                   .                  .                  .             // because the input and output ranges are permitted to overlap.)
+          .           .          .                    .           .          .                   .                  .                  .             // (2) If we're using random access iterators, then write the loop as
+          .           .          .                    .           .          .                   .                  .                  .             // a for loop with an explicit count.
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<bool _IsMove, bool _IsSimple, typename _Category>
+-- line 344 ----------------------------------------
+-- line 723 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .           #endif
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<bool _IsMove>
+          .           .          .                    .           .          .                   .                  .                  .               struct __copy_move_backward<_IsMove, true, random_access_iterator_tag>
+          .           .          .                    .           .          .                   .                  .                  .               {
+          .           .          .                    .           .          .                   .                  .                  .                 template<typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .           	_GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .           	static _Tp*
+        114 ( 0.00%)  1 ( 0.03%) 1 ( 0.04%)           0           0          0                  76 ( 0.00%)         0                  0           	__copy_move_b(const _Tp* __first, const _Tp* __last, _Tp* __result)
+          .           .          .                    .           .          .                   .                  .                  .           	{
+          .           .          .                    .           .          .                   .                  .                  .           #if __cplusplus >= 201103L
+          .           .          .                    .           .          .                   .                  .                  .           	  using __assignable = conditional<_IsMove,
+          .           .          .                    .           .          .                   .                  .                  .           					   is_move_assignable<_Tp>,
+          .           .          .                    .           .          .                   .                  .                  .           					   is_copy_assignable<_Tp>>;
+          .           .          .                    .           .          .                   .                  .                  .           	  // trivial types can have deleted assignment
+          .           .          .                    .           .          .                   .                  .                  .           	  static_assert( __assignable::type::value, "type is not assignable" );
+          .           .          .                    .           .          .                   .                  .                  .           #endif
+         76 ( 0.00%)  0          0                   38 ( 0.00%)  0          0                  19 ( 0.00%)         0                  0           	  const ptrdiff_t _Num = __last - __first;
+         38 ( 0.00%)  0          0                   19 ( 0.00%)  0          0                   0                  0                  0           	  if (_Num)
+        228 ( 0.00%) 11 ( 0.32%) 4 ( 0.16%)          76 ( 0.00%)  0          0                  19 ( 0.00%)        11 ( 0.00%)         3 ( 0.00%)  	    __builtin_memmove(__result - _Num, __first, sizeof(_Tp) * _Num);
+        114 ( 0.00%)  0          0                   38 ( 0.00%)  0          0                   0                  0                  0           	  return __result - _Num;
+         38 ( 0.00%)  0          0                   38 ( 0.00%)  0          0                   0                  0                  0           	}
+          .           .          .                    .           .          .                   .                  .                  .               };
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<bool _IsMove, typename _BI1, typename _BI2>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline _BI2
+        114 ( 0.00%) 11 ( 0.32%) 4 ( 0.16%)           0           0          0                  76 ( 0.00%)         0                  0               __copy_move_backward_a2(_BI1 __first, _BI1 __last, _BI2 __result)
+          .           .          .                    .           .          .                   .                  .                  .               {
+          .           .          .                    .           .          .                   .                  .                  .                 typedef typename iterator_traits<_BI1>::iterator_category _Category;
+          .           .          .                    .           .          .                   .                  .                  .           #ifdef __cpp_lib_is_constant_evaluated
+          .           .          .                    .           .          .                   .                  .                  .                 if (std::is_constant_evaluated())
+          .           .          .                    .           .          .                   .                  .                  .           	return std::__copy_move_backward<_IsMove, false, _Category>::
+          .           .          .                    .           .          .                   .                  .                  .           	  __copy_move_b(__first, __last, __result);
+          .           .          .                    .           .          .                   .                  .                  .           #endif
+          .           .          .                    .           .          .                   .                  .                  .                 return std::__copy_move_backward<_IsMove,
+          .           .          .                    .           .          .                   .                  .                  .           				       __memcpyable<_BI2, _BI1>::__value,
+        114 ( 0.00%)  2 ( 0.06%) 1 ( 0.04%)          57 ( 0.00%)  0          0                  19 ( 0.00%)        11 ( 0.00%)         3 ( 0.00%)  				       _Category>::__copy_move_b(__first,
+          .           .          .                    .           .          .                   .                  .                  .           								 __last,
+          .           .          .                    .           .          .                   .                  .                  .           								 __result);
+         38 ( 0.00%)  0          0                   38 ( 0.00%)  0          0                   0                  0                  0               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<bool _IsMove, typename _BI1, typename _BI2>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline _BI2
+        114 ( 0.00%)  0          0                    0           0          0                  76 ( 0.00%)        11 ( 0.00%)         3 ( 0.00%)      __copy_move_backward_a1(_BI1 __first, _BI1 __last, _BI2 __result)
+        152 ( 0.00%)  2 ( 0.06%) 1 ( 0.04%)          95 ( 0.00%)  0          0                  19 ( 0.00%)         0                  0               { return std::__copy_move_backward_a2<_IsMove>(__first, __last, __result); }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<bool _IsMove,
+          .           .          .                    .           .          .                   .                  .                  .           	   typename _Tp, typename _Ref, typename _Ptr, typename _OI>
+          .           .          .                    .           .          .                   .                  .                  .               _OI
+          .           .          .                    .           .          .                   .                  .                  .               __copy_move_backward_a1(_GLIBCXX_STD_C::_Deque_iterator<_Tp, _Ref, _Ptr>,
+          .           .          .                    .           .          .                   .                  .                  .           			    _GLIBCXX_STD_C::_Deque_iterator<_Tp, _Ref, _Ptr>,
+          .           .          .                    .           .          .                   .                  .                  .           			    _OI);
+          .           .          .                    .           .          .                   .                  .                  .           
+-- line 777 ----------------------------------------
+-- line 788 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .                 __is_random_access_iter<_II>::__value,
+          .           .          .                    .           .          .                   .                  .                  .                 _GLIBCXX_STD_C::_Deque_iterator<_Tp, _Tp&, _Tp*> >::__type
+          .           .          .                    .           .          .                   .                  .                  .               __copy_move_backward_a1(_II, _II,
+          .           .          .                    .           .          .                   .                  .                  .           			    _GLIBCXX_STD_C::_Deque_iterator<_Tp, _Tp&, _Tp*>);
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<bool _IsMove, typename _II, typename _OI>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline _OI
+        152 ( 0.00%)  0          0                    0           0          0                 114 ( 0.00%)         6 ( 0.00%)         1 ( 0.00%)      __copy_move_backward_a(_II __first, _II __last, _OI __result)
+          .           .          .                    .           .          .                   .                  .                  .               {
+        380 ( 0.00%)  1 ( 0.03%) 1 ( 0.04%)          57 ( 0.00%)  0          0                  95 ( 0.00%)         0                  0                 return std::__niter_wrap(__result,
+          .           .          .                    .           .          .                   .                  .                  .           		std::__copy_move_backward_a1<_IsMove>
+          .           .          .                    .           .          .                   .                  .                  .           		  (std::__niter_base(__first), std::__niter_base(__last),
+          .           .          .                    .           .          .                   .                  .                  .           		   std::__niter_base(__result)));
+         95 ( 0.00%)  0          0                   76 ( 0.00%)  0          0                   0                  0                  0               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<bool _IsMove,
+          .           .          .                    .           .          .                   .                  .                  .           	   typename _Ite, typename _Seq, typename _Cat, typename _OI>
+          .           .          .                    .           .          .                   .                  .                  .               _OI
+          .           .          .                    .           .          .                   .                  .                  .               __copy_move_backward_a(
+          .           .          .                    .           .          .                   .                  .                  .           		const ::__gnu_debug::_Safe_iterator<_Ite, _Seq, _Cat>&,
+          .           .          .                    .           .          .                   .                  .                  .           		const ::__gnu_debug::_Safe_iterator<_Ite, _Seq, _Cat>&,
+          .           .          .                    .           .          .                   .                  .                  .           		_OI);
+-- line 810 ----------------------------------------
+-- line 876 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .              *  optimizations such as unrolling).
+          .           .          .                    .           .          .                   .                  .                  .              *
+          .           .          .                    .           .          .                   .                  .                  .              *  Result may not be in the range (first,last].  Use move instead.  Note
+          .           .          .                    .           .          .                   .                  .                  .              *  that the start of the output range may overlap [first,last).
+          .           .          .                    .           .          .                   .                  .                  .             */
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _BI1, typename _BI2>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline _BI2
+        133 ( 0.00%)  1 ( 0.03%) 1 ( 0.04%)           0           0          0                  95 ( 0.00%)         0                  0               move_backward(_BI1 __first, _BI1 __last, _BI2 __result)
+          .           .          .                    .           .          .                   .                  .                  .               {
+          .           .          .                    .           .          .                   .                  .                  .                 // concept requirements
+          .           .          .                    .           .          .                   .                  .                  .                 __glibcxx_function_requires(_BidirectionalIteratorConcept<_BI1>)
+          .           .          .                    .           .          .                   .                  .                  .                 __glibcxx_function_requires(_Mutable_BidirectionalIteratorConcept<_BI2>)
+          .           .          .                    .           .          .                   .                  .                  .                 __glibcxx_function_requires(_ConvertibleConcept<
+          .           .          .                    .           .          .                   .                  .                  .           	    typename iterator_traits<_BI1>::value_type,
+          .           .          .                    .           .          .                   .                  .                  .           	    typename iterator_traits<_BI2>::value_type>)
+          .           .          .                    .           .          .                   .                  .                  .                 __glibcxx_requires_can_decrement_range(__first, __last, __result);
+          .           .          .                    .           .          .                   .                  .                  .           
+        247 ( 0.00%)  4 ( 0.12%) 2 ( 0.08%)          57 ( 0.00%)  0          0                  57 ( 0.00%)         0                  0                 return std::__copy_move_backward_a<true>(std::__miter_base(__first),
+          .           .          .                    .           .          .                   .                  .                  .           					       std::__miter_base(__last),
+          .           .          .                    .           .          .                   .                  .                  .           					       __result);
+         57 ( 0.00%)  0          0                   57 ( 0.00%)  0          0                   0                  0                  0               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .           #define _GLIBCXX_MOVE_BACKWARD3(_Tp, _Up, _Vp) std::move_backward(_Tp, _Up, _Vp)
+          .           .          .                    .           .          .                   .                  .                  .           #else
+          .           .          .                    .           .          .                   .                  .                  .           #define _GLIBCXX_MOVE_BACKWARD3(_Tp, _Up, _Vp) std::copy_backward(_Tp, _Up, _Vp)
+          .           .          .                    .           .          .                   .                  .                  .           #endif
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _ForwardIterator, typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+-- line 905 ----------------------------------------
+-- line 911 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .                 for (; __first != __last; ++__first)
+          .           .          .                    .           .          .                   .                  .                  .           	*__first = __value;
+          .           .          .                    .           .          .                   .                  .                  .               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _ForwardIterator, typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline typename
+          .           .          .                    .           .          .                   .                  .                  .               __gnu_cxx::__enable_if<__is_scalar<_Tp>::__value, void>::__type
+         75 ( 0.00%)  1 ( 0.03%) 1 ( 0.04%)           0           0          0                  60 ( 0.00%)         0                  0               __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
+          .           .          .                    .           .          .                   .                  .                  .           	      const _Tp& __value)
+          .           .          .                    .           .          .                   .                  .                  .               {
+         45 ( 0.00%)  0          0                   30 ( 0.00%)  0          0                  15 ( 0.00%)         0                  0                 const _Tp __tmp = __value;
+262,616,000 ( 0.51%) 15 ( 0.44%) 5 ( 0.20%) 196,961,985 ( 0.98%)  0          0                   0                  0                  0                 for (; __first != __last; ++__first)
+196,961,955 ( 0.38%)  0          0          131,307,970 ( 0.65%)  0          0          65,653,985 ( 0.46%) 4,103,371 (49.92%) 3,848,765 (50.03%)  	*__first = __tmp;
+         60 ( 0.00%)  0          0                   30 ( 0.00%) 15 ( 0.00%) 5 ( 0.00%)          0                  0                  0               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             // Specialization: for char types we can use memset.
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline typename
+          .           .          .                    .           .          .                   .                  .                  .               __gnu_cxx::__enable_if<__is_byte<_Tp>::__value, void>::__type
+          .           .          .                    .           .          .                   .                  .                  .               __fill_a1(_Tp* __first, _Tp* __last, const _Tp& __c)
+          .           .          .                    .           .          .                   .                  .                  .               {
+-- line 933 ----------------------------------------
+-- line 960 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             void
+          .           .          .                    .           .          .                   .                  .                  .             __fill_a1(_GLIBCXX_STD_C::_Bit_iterator, _GLIBCXX_STD_C::_Bit_iterator,
+          .           .          .                    .           .          .                   .                  .                  .           	    const bool&);
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _FIte, typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline void
+         90 ( 0.00%) 16 ( 0.47%) 6 ( 0.24%)           0           0          0                  60 ( 0.00%)         0                  0               __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
+        135 ( 0.00%)  0          0                   75 ( 0.00%)  0          0                  15 ( 0.00%)         0                  0               { std::__fill_a1(__first, __last, __value); }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _Ite, typename _Seq, typename _Cat, typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .               void
+          .           .          .                    .           .          .                   .                  .                  .               __fill_a(const ::__gnu_debug::_Safe_iterator<_Ite, _Seq, _Cat>&,
+          .           .          .                    .           .          .                   .                  .                  .           	     const ::__gnu_debug::_Safe_iterator<_Ite, _Seq, _Cat>&,
+          .           .          .                    .           .          .                   .                  .                  .           	     const _Tp&);
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             /**
+-- line 977 ----------------------------------------
+-- line 1002 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .             // Used by fill_n, generate_n, etc. to convert _Size to an integral type:
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR int
+          .           .          .                    .           .          .                   .                  .                  .             __size_to_integer(int __n) { return __n; }
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR unsigned
+          .           .          .                    .           .          .                   .                  .                  .             __size_to_integer(unsigned __n) { return __n; }
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR long
+          .           .          .                    .           .          .                   .                  .                  .             __size_to_integer(long __n) { return __n; }
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR unsigned long
+         90 ( 0.00%)  0          0                   45 ( 0.00%)  0          0                  30 ( 0.00%)         0                  0             __size_to_integer(unsigned long __n) { return __n; }
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR long long
+          .           .          .                    .           .          .                   .                  .                  .             __size_to_integer(long long __n) { return __n; }
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR unsigned long long
+          .           .          .                    .           .          .                   .                  .                  .             __size_to_integer(unsigned long long __n) { return __n; }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .           #if defined(__GLIBCXX_TYPE_INT_N_0)
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR __GLIBCXX_TYPE_INT_N_0
+          .           .          .                    .           .          .                   .                  .                  .             __size_to_integer(__GLIBCXX_TYPE_INT_N_0 __n) { return __n; }
+-- line 1018 ----------------------------------------
+-- line 1101 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .                 static_assert(is_integral<_Size>{}, "fill_n must pass integral size");
+          .           .          .                    .           .          .                   .                  .                  .           #endif
+          .           .          .                    .           .          .                   .                  .                  .                 return __fill_n_a1(__first, __n, __value);
+          .           .          .                    .           .          .                   .                  .                  .               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _OutputIterator, typename _Size, typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline _OutputIterator
+         90 ( 0.00%) 15 ( 0.44%) 5 ( 0.20%)           0           0          0                  60 ( 0.00%)         0                  0               __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value,
+          .           .          .                    .           .          .                   .                  .                  .           	       std::random_access_iterator_tag)
+          .           .          .                    .           .          .                   .                  .                  .               {
+          .           .          .                    .           .          .                   .                  .                  .           #if __cplusplus >= 201103L
+          .           .          .                    .           .          .                   .                  .                  .                 static_assert(is_integral<_Size>{}, "fill_n must pass integral size");
+          .           .          .                    .           .          .                   .                  .                  .           #endif
+         30 ( 0.00%)  0          0                   15 ( 0.00%)  0          0                   0                  0                  0                 if (__n <= 0)
+          .           .          .                    .           .          .                   .                  .                  .           	return __first;
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .                 __glibcxx_requires_can_increment(__first, __n);
+          .           .          .                    .           .          .                   .                  .                  .           
+        135 ( 0.00%) 15 ( 0.44%) 5 ( 0.20%)          60 ( 0.00%)  0          0                  15 ( 0.00%)         0                  0                 std::__fill_a(__first, __first + __n, __value);
+         60 ( 0.00%)  0          0                   30 ( 0.00%) 15 ( 0.00%) 5 ( 0.00%)          0                  0                  0                 return __first + __n;
+         30 ( 0.00%)  0          0                   30 ( 0.00%)  0          0                   0                  0                  0               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             /**
+          .           .          .                    .           .          .                   .                  .                  .              *  @brief Fills the range [first,first+n) with copies of value.
+          .           .          .                    .           .          .                   .                  .                  .              *  @ingroup mutating_algorithms
+          .           .          .                    .           .          .                   .                  .                  .              *  @param  __first  An output iterator.
+          .           .          .                    .           .          .                   .                  .                  .              *  @param  __n      The count of copies to perform.
+          .           .          .                    .           .          .                   .                  .                  .              *  @param  __value  A reference-to-const of arbitrary type.
+          .           .          .                    .           .          .                   .                  .                  .              *  @return   The iterator at first+n.
+-- line 1130 ----------------------------------------
+-- line 1136 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .              *  If @p __n is negative, the function does nothing.
+          .           .          .                    .           .          .                   .                  .                  .             */
+          .           .          .                    .           .          .                   .                  .                  .             // _GLIBCXX_RESOLVE_LIB_DEFECTS
+          .           .          .                    .           .          .                   .                  .                  .             // DR 865. More algorithms that throw away information
+          .           .          .                    .           .          .                   .                  .                  .             // DR 426. search_n(), fill_n(), and generate_n() with negative n
+          .           .          .                    .           .          .                   .                  .                  .             template<typename _OI, typename _Size, typename _Tp>
+          .           .          .                    .           .          .                   .                  .                  .               _GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .               inline _OI
+         90 ( 0.00%)  0          0                    0           0          0                  60 ( 0.00%)         0                  0               fill_n(_OI __first, _Size __n, const _Tp& __value)
+          .           .          .                    .           .          .                   .                  .                  .               {
+          .           .          .                    .           .          .                   .                  .                  .                 // concept requirements
+          .           .          .                    .           .          .                   .                  .                  .                 __glibcxx_function_requires(_OutputIteratorConcept<_OI, _Tp>)
+          .           .          .                    .           .          .                   .                  .                  .           
+        135 ( 0.00%)  1 ( 0.03%) 1 ( 0.04%)          45 ( 0.00%)  0          0                  30 ( 0.00%)         0                  0                 return std::__fill_n_a(__first, std::__size_to_integer(__n), __value,
+         45 ( 0.00%)  0          0                    0           0          0                  15 ( 0.00%)         0                  0           			       std::__iterator_category(__first));
+         30 ( 0.00%)  0          0                   30 ( 0.00%) 15 ( 0.00%) 5 ( 0.00%)          0                  0                  0               }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             template<bool _BoolType>
+          .           .          .                    .           .          .                   .                  .                  .               struct __equal
+          .           .          .                    .           .          .                   .                  .                  .               {
+          .           .          .                    .           .          .                   .                  .                  .                 template<typename _II1, typename _II2>
+          .           .          .                    .           .          .                   .                  .                  .           	_GLIBCXX20_CONSTEXPR
+          .           .          .                    .           .          .                   .                  .                  .           	static bool
+          .           .          .                    .           .          .                   .                  .                  .           	equal(_II1 __first1, _II1 __last1, _II2 __first2)
+-- line 1159 ----------------------------------------
+-- line 1507 ----------------------------------------
+          .           .          .                    .           .          .                   .                  .                  .             { return (int)sizeof(int) * __CHAR_BIT__  - 1 - __builtin_clz(__n); }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR unsigned
+          .           .          .                    .           .          .                   .                  .                  .             __lg(unsigned __n)
+          .           .          .                    .           .          .                   .                  .                  .             { return (int)sizeof(int) * __CHAR_BIT__  - 1 - __builtin_clz(__n); }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR long
+          .           .          .                    .           .          .                   .                  .                  .             __lg(long __n)
+        180 ( 0.00%)  0          0                   45 ( 0.00%)  0          0                  30 ( 0.00%)         0                  0             { return (int)sizeof(long) * __CHAR_BIT__ - 1 - __builtin_clzl(__n); }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR unsigned long
+          .           .          .                    .           .          .                   .                  .                  .             __lg(unsigned long __n)
+          .           .          .                    .           .          .                   .                  .                  .             { return (int)sizeof(long) * __CHAR_BIT__ - 1 - __builtin_clzl(__n); }
+          .           .          .                    .           .          .                   .                  .                  .           
+          .           .          .                    .           .          .                   .                  .                  .             inline _GLIBCXX_CONSTEXPR long long
+          .           .          .                    .           .          .                   .                  .                  .             __lg(long long __n)
+          .           .          .                    .           .          .                   .                  .                  .             { return (int)sizeof(long long) * __CHAR_BIT__ - 1 - __builtin_clzll(__n); }
+-- line 1523 ----------------------------------------
+
+--------------------------------------------------------------------------------
+Ir                      I1mr         ILmr        Dr                      D1mr                DLmr                Dw                      D1mw               DLmw               
+--------------------------------------------------------------------------------
+51,294,983,144 (99.99%) 115 ( 3.36%) 51 ( 2.05%) 20,160,199,958 (99.99%) 45,479,823 (99.90%) 38,421,998 (99.97%) 14,410,310,398 (100.0%) 8,206,810 (99.85%) 7,690,912 (99.97%)  events annotated
+
